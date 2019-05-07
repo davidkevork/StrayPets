@@ -1,0 +1,157 @@
+/*
+#file name :style.css
+#author:yichen
+#created:27/04/2019
+#Last Modified: 27/04/2019
+#Description:Home page
+
+*/
+
+*{
+	font-family: arial, san-serif;
+}
+
+body{
+	margin: 0 auto;
+	background-image: url("images/backgroundhome.jpg");
+	background-size: 100%;
+	width:100%;
+}
+article img{
+	width:50%;
+	height:300px;
+}
+
+article h2{
+	width:50;
+    text-align:center;
+	background-color:#FFFFF0;
+}
+
+article section {
+	width:50;
+    text-align:center;
+    background-color:#FFFFF0;
+}
+
+header{
+	background-color:#FFFFF0;
+	width: 100%;
+	height: 50px;
+}
+header img{
+	width:50px;
+	height:50px;
+	float:left;
+}
+
+header h1{
+	display:inline;
+	margin-bottom:0;
+	margin-top:0;
+	/*Move the h1 to center line*/
+	line-height: 1.5;
+}
+
+*{margin: 0;padding: 0}
+li{list-style: none;}
+
+ul li a{
+    font-size: 14px;
+   justify-content: center;
+    color: rgb(152,142,135);
+    display: flex;
+	background-color:#FFFFF0;
+
+}
+
+/*h1 for position page*/
+h1{
+	font-family: ...;
+	font-size: ...;
+	font-weight: ...;
+}
+
+/*aside for postion page*/
+#admin{
+	width:70%;
+	float: left;
+	margin: 0.5%;
+}
+aside{
+	width:25%;
+	float:right; 	
+	border:2px solid black;
+	padding:0.2em 0.6em;
+	margin: 1%;
+	
+}
+
+hr{
+	clear: both;
+}
+
+
+
+#design{
+	width:70%;
+	float: left;
+	margin: 0.5%;
+}
+hr{
+	clear: both;
+}
+footer{
+	font-size: small;
+	width: 100%;
+	text-align: center;
+	clear: both;
+}
+
+#personal dt{
+	float: left;
+	width:50%;
+	clear: both;
+	
+}
+
+#personal dd{
+	float:right;
+}
+
+#personal img{
+	float:right;
+	width:200px;
+	height: 100px;
+	border: 10px solid black;
+	
+}
+
+table, th, td{
+	border:1px solid black;
+}
+table{
+	border-collapse:collapse;
+	text-align: center;
+	margin:0 auto;
+	width:70%;
+	background-color:#FFFFF0;
+}
+
+table caption{
+	font-size:40px;
+	font-weight:900;
+	background-color:#FFFFF0;
+}
+fieldset{
+	  text-align:center;
+    background-color:#FFFFF0;
+}
+form{
+	text-align:center;
+    background-color:#FFFFF0;
+}
+
+#InformationTable section span{
+	float: right;
+}
