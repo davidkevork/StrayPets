@@ -7,24 +7,23 @@ $dbName = "messages";
 $conn = mysqli_connect($servername, $username, $password, $dbName);
 
 if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
+    die(json_encode(["isError" => true, "message" => "Connection failed: " . mysqli_connect_error()]));
 }
-echo "Connected successfully";
 
 $sql = "SELECT * FROM contact";
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
+    $data = [];
     // output data of each row
     while($row = mysqli_fetch_assoc($result)) {
-		$ID[$i] = $row["ID"];
-		$name[$i] = $row["Name"];
-		$comment[$i] = $row["Comment"];
-		$date_of_comment[$i] = $row["Date"];
+        array_push($data, $result);
 		$i++;
     }
+    echo json_encode(["isError" => false, "message" => $data]);
 } else {
-    echo "0 results";
+    echo json_encode(["isError" => true, "message" => "No result"]);
 }
 mysqli_close($conn);
+
 ?>
