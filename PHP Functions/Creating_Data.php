@@ -10,10 +10,35 @@ if (!$conn) {
 	die(json_encode(["isError" => true, "message" => "Connection failed: " . mysqli_connect_error()]));
 }
 
-$namevariable = "gwen stefani";
-$commentvariable = "hi, blah blah blah blah";
-
-$sql = "INSERT INTO contact (Name, Comment, Date) VALUES ('$namevariable', '$commentvariable', 'NOW()')";
+$sql = "INSERT INTO `contact`(
+	`FirstName`,
+	`LastName`,
+	`DOB`,
+	`Gender`,
+	`StreetAddress`,
+	`SuburbTown`,
+	`State`,
+	`PostCode`,
+	`EmailAddress`,
+	`PhoneNumber`,
+	`PetState`,
+	`Comment`,
+	`Date`
+) VALUES (
+	'" + $_POST['FirstName'] + "',
+	'" + $_POST['LastName'] + "',
+	'" + $_POST['DOB'] + "',
+	'" + $_POST['Gender'] + "',
+	'" + $_POST['StreetAddress'] + "',
+	'" + $_POST['SuburbTown'] + "',
+	'" + $_POST['State'] + "',
+	'" + $_POST['PostCode'] + "',
+	'" + $_POST['EmailAddress'] + "',
+	'" + $_POST['PhoneNumber'] + "',
+	'" + $_POST['PetState'] + "',
+	'" + $_POST['Comment'] + "',
+	,'NOW()'
+)";
 
 if (mysqli_query($conn, $sql)) {
 	echo json_encode(["isError" => false, "message" => "New Record Created Successfully"]);

@@ -10,7 +10,7 @@ if (!$conn) {
     die(json_encode(["isError" => true, "message" => "Connection failed: " . mysqli_connect_error()]));
 }
 
-$sql = "SELECT * FROM contact";
+$sql = "SELECT * FROM `contact`";
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
@@ -18,7 +18,6 @@ if (mysqli_num_rows($result) > 0) {
     // output data of each row
     while($row = mysqli_fetch_assoc($result)) {
         array_push($data, $result);
-		$i++;
     }
     echo json_encode(["isError" => false, "message" => $data]);
 } else {
