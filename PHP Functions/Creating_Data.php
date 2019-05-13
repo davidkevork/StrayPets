@@ -37,7 +37,7 @@ $sql = "INSERT INTO `contact`(
 	'" + $_POST['PhoneNumber'] + "',
 	'" + $_POST['PetState'] + "',
 	'" + $_POST['Comment'] + "',
-	,'NOW()'
+	'NOW()'
 )";
 
 if (mysqli_query($conn, $sql)) {
