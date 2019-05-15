@@ -10,7 +10,7 @@ if (!$conn) {
 	die(json_encode(["isError" => true, "message" => "Connection failed: " . mysqli_connect_error()]));
 }
 
-$sql = "INSERT INTO `contact`(
+$sql = "INSERT INTO `contact` (
 	`FirstName`,
 	`LastName`,
 	`DOB`,

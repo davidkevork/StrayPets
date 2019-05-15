@@ -5,7 +5,6 @@ function validate() {
 		let result = true;
 		
 		const DOBValue = document.getElementById("DOB").split("-");
-		const DOB = DOBValue[2] + '/' + DOBValue[1] + '/' + DOBValue[0];
 		const CurrentYear = new Date().getFullYear();
 		const Age = CurrentYear - DOBValue[2];
 		
@@ -28,46 +27,46 @@ function validate() {
 		switch (State) {
 			case 'VIC':
 				if (PostCodeString.indexOf('3') !== 0 && PostCodeString.indexOf('8') !== 0) {
-					throw new Error(e);
+					result = false;
 				}
 				break;
 			case 'NSW':
 				if (PostCodeString.indexOf('1') !== 0 && PostCodeString.indexOf('2') !== 0) {
-					throw new Error(e);
+					result = false;
 				}
 				break;
 			case 'QLD':
 				if (PostCodeString.indexOf('4') !== 0 && PostCodeString.indexOf('9') !== 0) {
-					throw new Error(e);
+					result = false;
 				}
 				break;
 			case 'NT':
 				if (PostCodeString.indexOf('0') !== 0) {
-					throw new Error(e);
+					result = false;
 				}
 				break;
 			case 'WA':
 				if (PostCodeString.indexOf('6') !== 0) {
-					throw new Error(e);
+					result = false;
 				}
 				break;
 			case 'SA':
 				if (PostCodeString.indexOf('5') !== 0) {
-					throw new Error(e);
+					result = false;
 				}
 				break;
 			case 'TAS':
 				if (PostCodeString.indexOf('7') !== 0) {
-					throw new Error(e);
+					result = false;
 				}
 				break;
 			case 'ACT':
 				if (PostCodeString.indexOf('0') !== 0) {
-					throw new Error(e);
+					result = false;
 				}
 				break;
 			default:
-				throw new Error(e);
+				result = false;
 		}
 
     storinformation();
@@ -84,8 +83,6 @@ function validate() {
 
     return result;
 }
-
-
 
 //save data
 function storinformation() {
@@ -136,12 +133,7 @@ function prefillform() {
     }
 }
 
-function init() {
-    var regForm = document.getElementById("regForm");
-    regForm.onsubmit = validate;
-    // transferData();
+window.onload = () => {
+    document.getElementById("regForm").onsubmit = validate;
     prefillform();
 }
-
-
-window.onload = init;
