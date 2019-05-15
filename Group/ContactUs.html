@@ -1,123 +1,136 @@
 <!DOCTYPE html>
 <html lang ="en">
-   <head>
-      <meta charset="utf-8"/>
-      <meta name="description" content= "Animals and resscuess" />
-      <meta name ="keywords"  content="help,miss,find,pet" />
-      <meta name = "author" content="YICHEN GUAN"/>
-      <title>Resscusee Animals </title>
-      <link rel="stylesheet" href="styles/style.css"/>
-      <script src="script/information.js"></script>
-   </head>
-   <body>
-      <header>
-         <img src="images/logo.jpg" alt="Logo"/>
-         <h1>Contact Us</h1>
-      </header>
-      <nav>
-         <ul>
-            <li><a href="Home.html">HOME</a></li>
-            <li><a href="Browse.html">BROWSE ANIMAL</a></li>
-            <li><a href="ContactUs.html">CONTACT US</a></li>
-            <li><a href="About.html">ABOUT US</a></li>
-            <li><a href="Staff.html">STAFF LOGIN</a></li>
-         </ul>
-      </nav>
-      <article>
-         <h2>My Information</h2>
-         <form action="http://ec2-13-210-163-91.ap-southeast-2.compute.amazonaws.com/Website/Creating_Data.php" method="POST" id="regForm">
-            <fieldset>
-               <legend>Personal Details</legend>
-               <div>
-                  <label for="FirstName">First Name</label >
-                  <input id="FirstName" type="text" name="FirstName" required="required" maxlength="20"/>
-               </div>
-               <div>
-                  <label for="LastName">Last Name</label>
-                  <input id="LastName" type="text" name="lname" required="required" maxlength="20"/>
-               </div>
-               <div>
-                  <label for="DOB">Date of Birth</label> 
-                  <input type="date" name="DOB" id="DOB" required="required"/>
-               </div>
-               <pdiv>
-                 <span>Gender: </span>
-                  <label for="male">Male</label> 
-                  <input type="radio" id="male" name="Gender" value="male" required="required"/>
-                  <label for="female">Female</label> 
-                  <input type="radio" id="female" name="Gender" value="female" required="required"/>
-               </div>
-            </fieldset>
-            <fieldset>
-               <legend>Adress</legend>
-               <div>
-                  <label for="StreetAdress">Street Adress</label>
-                  <input id="StreetAdress" type="text" name="StreetAdress" size="40" required="required"/>
-               </div>
-               <div>
-                  <label for="SuburbTown">Suburb/town</label>
-                  <input id="SuburbTown" type="text" name="SuburbTown" size="40" required="required"/>
-               </div>
-               <div>
-                  <label for="State">State</label>
-                  <select id="State" name="State">
-                     <option value="">Please Select</option>
-                     <option value="VIC">VIC </option>
-                     <option value="NSW">NSW</option>
-                     <option value="QLD">QLD</option>
-                     <option value="NT">NT</option>
-                     <option value="WA">WA</option>
-                     <option value="SA">SA</option>
-                     <option value="TAS">TAS</option>
-                     <option value="ACT">ACT</option>
-                  </select>
-               </div>
-               <div>
-                  <label for="PostCode">PostCode</label>
-                  <input id="PostCode" type="text" name="PostCode" pattern="[0-9]{4}" required="required" />
-               </div>
-            </fieldset>
-            <fieldset>
-               <legend>Contact information</legend>
-               <div>
-                  <label for="EmailAddress">Email Adress</label >
-                  <input id="EmailAddress" name="EmailAddress" type="email" required="required" />
-               </div>
-               <div>
-                  <label for="PhoneNumber">Phone Number</label >
-                  <input id="PhoneNumber" name="PhoneNumber" type="text" pattern="\d{3}[\ ]\d{3}[\ ]\d{4}" />
-               </div>
-            </fieldset>
-            <div>
-              <ul>
-                <li>
-                    <label>Lose Pet</label>
-                    <input type="checkbox" name="PetState[]" value="LPV" id="LP" />
-                </li>
-                <li>
-                    <label>Pick up pet</label>
-                    <input type="checkbox" name="PetState[]" value="PickP" id="Pick"/>
-                </li>
-                <li>
-                    <label>Provide cluess</label>
-                    <input type="checkbox" name="PetState[]" value="language" id="PCS" />
-                </li>
-                <li>
-                    <label>other</label>
-                    <input type="checkbox" name="PetState[]" value="other" id="others"  />
-                </li>
-              </ul>
-            </div>
-            <div>
-               <textarea rows="10" cols="50" name="Comment" id="Comment"></textarea>
-            </div>
-            <p id="error"></p>
-            <input type="submit" value="Submit" />
-            <input type="reset" value="Reset" />
-         </form>
-      </article>
-      <footer>
-         <p>Copyright &#169;PetHouse</p>
-      </footer>
-   </body>
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="description" content= "Animals and resscuess" />
+		<meta name ="keywords"  content="help,miss,find,pet" />
+		<meta name = "author" content="YICHEN GUAN"/>
+		<title>Resscusee Animals </title>
+		<link rel="stylesheet" href="styles/style.css"/>
+		<script src="script/information.js"></script>
+	</head>
+	<body>
+		<header>
+			<img src="images/logo.jpg" alt="Logo"/>
+			<h1>Contact Us</h1>
+		</header>
+		<nav>
+			<ul>
+				<li>
+					<a href="Home.html">HOME</a>
+				</li>
+				<li>
+					<a href="Browse.html">BROWSE ANIMAL</a>
+				</li>
+				<li>
+					<a href="ContactUs.html">CONTACT US</a>
+				</li>
+				<li>
+					<a href="About.html">ABOUT US</a>
+				</li>
+				<li>
+					<a href="StaffLogin.html">STAFF LOGIN</a>
+				</li>
+				<li>
+					<a href="StaffRegister.html">STAFF Register</a>
+				</li>
+			</ul>
+		</nav>
+		<article>
+			<h2>My Information</h2>
+			<form action="http://ec2-13-210-163-91.ap-southeast-2.compute.amazonaws.com/Website/Creating_Data.php" method="POST" id="regForm">
+				<fieldset>
+					<legend>Personal Details</legend>
+					<div>
+						<label for="FirstName">First Name</label >
+						<input id="FirstName" type="text" name="FirstName" required="required" maxlength="20"/>
+					</div>
+					<div>
+						<label for="LastName">Last Name</label>
+						<input id="LastName" type="text" name="LastName" required="required" maxlength="20"/>
+					</div>
+					<div>
+						<label for="DOB">Date of Birth</label>
+						<input type="date" name="DOB" id="DOB" required="required"/>
+					</div>
+					<pdiv>
+						<span>Gender: </span>
+						<label for="male">Male</label>
+						<input type="radio" id="male" name="Gender" value="male" required="required"/>
+						<label for="female">Female</label>
+						<input type="radio" id="female" name="Gender" value="female" required="required"/>
+					</div>
+				</fieldset>
+				<fieldset>
+					<legend>Adress</legend>
+					<div>
+						<label for="StreetAddress">Street Address</label>
+						<input id="StreetAddress" type="text" name="StreetAddress" size="40" required="required"/>
+					</div>
+					<div>
+						<label for="SuburbTown">Suburb/town</label>
+						<input id="SuburbTown" type="text" name="SuburbTown" size="40" required="required"/>
+					</div>
+					<div>
+						<label for="State">State</label>
+						<select id="State" name="State">
+							<option value="">Please Select</option>
+							<option value="VIC">VIC </option>
+							<option value="NSW">NSW</option>
+							<option value="QLD">QLD</option>
+							<option value="NT">NT</option>
+							<option value="WA">WA</option>
+							<option value="SA">SA</option>
+							<option value="TAS">TAS</option>
+							<option value="ACT">ACT</option>
+						</select>
+					</div>
+					<div>
+						<label for="PostCode">PostCode</label>
+						<input id="PostCode" type="text" name="PostCode" pattern="[0-9]{4}" required="required" />
+					</div>
+				</fieldset>
+				<fieldset>
+					<legend>Contact information</legend>
+					<div>
+						<label for="EmailAddress">Email Adress</label >
+						<input id="EmailAddress" name="EmailAddress" type="email" required="required" />
+					</div>
+					<div>
+						<label for="PhoneNumber">Phone Number</label >
+						<input id="PhoneNumber" name="PhoneNumber" type="text" pattern="\d{3}[\ ]\d{3}[\ ]\d{4}" />
+					</div>
+				</fieldset>
+				<div>
+					<ul>
+						<li>
+							<label>Lose Pet</label>
+							<input type="checkbox" name="PetState[]" value="LPV" id="LP" />
+						</li>
+						<li>
+							<label>Pick up pet</label>
+							<input type="checkbox" name="PetState[]" value="PickP" id="Pick"/>
+						</li>
+						<li>
+							<label>Provide cluess</label>
+							<input type="checkbox" name="PetState[]" value="language" id="PCS" />
+						</li>
+						<li>
+							<label>other</label>
+							<input type="checkbox" name="PetState[]" value="other" id="others"  />
+						</li>
+					</ul>
+				</div>
+				<div>
+					<textarea rows="10" cols="50" name="Comment" id="Comment"></textarea>
+				</div>
+				<p id="error"></p>
+				<input type="submit" value="Submit" />
+				<input type="reset" value="Reset" />
+			</form>
+		</article>
+		<footer>
+			<p>Copyright &#169;PetHouse</p>
+		</footer>
+	</body>
 </html>

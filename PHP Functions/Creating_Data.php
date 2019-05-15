@@ -25,19 +25,19 @@ $sql = "INSERT INTO `contact` (
 	`Comment`,
 	`Date`
 ) VALUES (
-	'" + $_POST['FirstName'] + "',
-	'" + $_POST['LastName'] + "',
-	'" + $_POST['DOB'] + "',
-	'" + $_POST['Gender'] + "',
-	'" + $_POST['StreetAddress'] + "',
-	'" + $_POST['SuburbTown'] + "',
-	'" + $_POST['State'] + "',
-	'" + $_POST['PostCode'] + "',
-	'" + $_POST['EmailAddress'] + "',
-	'" + $_POST['PhoneNumber'] + "',
-	'" + $_POST['PetState'] + "',
-	'" + $_POST['Comment'] + "',
-	'NOW()'
+	'" . $_POST['FirstName'] . "',
+	'" . $_POST['LastName'] . "',
+	'" . $_POST['DOB'] . "',
+	'" . $_POST['Gender'] . "',
+	'" . $_POST['StreetAddress'] . "',
+	'" . $_POST['SuburbTown'] . "',
+	'" . $_POST['State'] . "',
+	'" . $_POST['PostCode'] . "',
+	'" . $_POST['EmailAddress'] . "',
+	'" . $_POST['PhoneNumber'] . "',
+	'" . serialize($_POST['PetState']) . "',
+	'" . ($_POST['Comment'] ?? "empty") . "',
+	NOW()
 )";
 
 if (mysqli_query($conn, $sql)) {

@@ -155,3 +155,11 @@ form{
 #InformationTable section span{
 	float: right;
 }
+
+.error {
+	color: red;
+	font-size: 20px;
+	text-align: center;
+	background: white;
+	font-weight: 700;
+}
