@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang ="en">
+   <head>
+      <meta charset="utf-8"/>
+      <meta name="description" content= "Animals and resscuess" />
+      <meta name ="keywords"  content="help,miss,find,pet" />
+      <meta name = "author" content="Lachlan becirovic"/>
+      <title>Enter animal </title>
+      <link rel="stylesheet" href="styles/style.css"/>
+      <script src="script/information.js"></script>
+   </head>
+   <body>
+      <header>
+         <img src="images/logo.jpg" alt="Logo"/>
+         <h1>Contact Us</h1>
+      </header>
+      <nav>
+         <ul>
+            <li><a href="Home.html">HOME</a></li>
+            <li><a href="Browse.html">BROWSE ANIMAL</a></li>
+            <li><a href="ContactUs.html">CONTACT US</a></li>
+            <li><a href="About.html">ABOUT US</a></li>
+            <li><a href="Staff.html">STAFF LOGIN</a></li>
+         </ul>
+      </nav>
+      <article>
+         <h2>New Pet</h2>
+         <form action="New_pet.php" method="POST" id="NewPetForm">
+            <fieldset>
+               <legend>Pet Details</legend>
+			    <div>
+                  <label for="Species">Species</label>
+                  <select id="Species" name="Species">
+                     <option value="Dog">Dog </option>
+                     <option value="Cat">Cat</option>
+                     <option value="Fish">Fish</option>
+                     <option value="Bird">Bird</option>
+                     <option value="Horse">Horse</option>
+                     <option value="Turtle">Turtle</option>
+                     <option value="Rabbit">Rabbit</option>
+                     <option value="Snake">Snake</option>
+                  </select>
+               </div>
+			   <br />
+               <div>
+                  <label for="Breed">Breed </label >
+                  <input id="Breed" type="text" name="Breed" required="required" maxlength="20"/>
+               </div>
+			   <br />
+               <div>
+                  <label for="DOB">Date of Birth</label> 
+                  <input type="date" name= "DOB" id="DOB" required="required"/>
+               </div>
+			   <br />
+               <div>
+                 <span>Gender: </span>
+                  <label for="male">Male</label> 
+                  <input type="radio" id="male" name="Gender" value="male" required="required"/>
+                  <label for="female">Female</label> 
+                  <input type="radio" id="female" name="Gender" value="female" required="required"/>
+               </div>
+			   <br />
+            </fieldset>
+            <fieldset>
+               <legend>Pet Info</legend>
+               <div>
+                  <label for="PetName">Pet Name </label>
+                  <input id="PetName" type="text" name="PetName" size="20" required="required"/>
+               </div>
+			   <br />
+			   <div>
+                  <label for="PetDescribe">Pet description </label>
+				<textarea id="PetDescribe" name="PetDescribe" placeholder="Write anything about the pet here." rows="4" cols="40"></textarea>
+               </div>
+			   <br />
+			</fieldset>
+			<br />
+            <input type="submit" value="Submit" />
+            <input type="reset" value="Reset" />
+			<br />
+         </form>
+      </article>
+      <footer>
+         <p>Copyright &#169;PetHouse</p>
+      </footer>
+   </body>
+</html>
