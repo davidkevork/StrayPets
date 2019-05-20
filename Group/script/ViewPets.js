@@ -18,14 +18,14 @@ $.makeTable = function (mydata) {
 window.onload = () => {
   $.ajax({
     dataType: "json",
-    url: 'http://ec2-13-210-163-91.ap-southeast-2.compute.amazonaws.com/Website/Grabbing_Data.php',
+    url: 'http://ec2-13-239-38-4.ap-southeast-2.compute.amazonaws.com/Website/Grabbing_Animals.php',
   }).done(function(data) {
     if (data.isError === true) {
       document.getElementById('pets').innerHTML = "<p class='error'>"+data.message+"</p>";
     } else {
       let table = "<table><tr>";
-      table += "<td>Species</td><td>Breed</td><td>DOB</td><td>Gender</td>";
-      table += "<td>PetName</td><td>PetDescription</td>";
+      table += "<td>ID</td><td>Species</td><td>Breed</td><td>DOB</td>";
+      table += "<td>Gender</td><td>PetName</td><td>PetDescription</td>";
       (data.message).forEach(element => {
         table += "<tr>";
         Object.keys(element).forEach(elementKeys => {

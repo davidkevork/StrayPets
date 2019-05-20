@@ -4,28 +4,32 @@ $username = "username";
 $password = "password";
 $dbName = "messages";
 
+session_start();
+
+if (!isset($_SESSION['username']) || !isset($_SESSION['isLoggedIn']) || $_SESSION['isLoggedIn'] != true) {
+  die(json_encode(["isError" => true, "message" => "Please login before adding pets"]));
+}
+
 $conn = mysqli_connect($servername, $username, $password, $dbName);
 
 if (!$conn) {
 	die(json_encode(["isError" => true, "message" => "Connection failed: " . mysqli_connect_error()]));
 }
 
-$sql = "INSERT INTO `pets`(
+$sql = "INSERT INTO `Pets`(
 	`Species`,
 	`Breed`,
 	`DOB`,
 	`Gender`,
 	`PetName`,
-	`PetDescribe`,
-
+	`PetDescription`
 ) VALUES (
-	'" + $_POST['Species'] + "',
-	'" + $_POST['Breed'] + "',
-	'" + $_POST['DOB'] + "',
-	'" + $_POST['Gender'] + "',
-	'" + $_POST['PetName'] + "',
-	'" + $_POST['PetDescribe'] + "',
-
+	'" . $_POST['Species'] . "',
+	'" . $_POST['Breed'] . "',
+	'" . $_POST['DOB'] . "',
+	'" . $_POST['Gender'] . "',
+	'" . $_POST['PetName'] . "',
+	'" . $_POST['PetDescription'] . "'
 )";
 
 if (mysqli_query($conn, $sql)) {

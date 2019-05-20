@@ -105,7 +105,7 @@ function storinformation() {
     sessionStorage.other = document.getElementById("others").checked;
 }
 
-// http://ec2-13-210-163-91.ap-southeast-2.compute.amazonaws.com/Website/Creating_Data.php
+// http://ec2-13-239-38-4.ap-southeast-2.compute.amazonaws.com/Website/Creating_Data.php
 function prefillform() {
     if (sessionStorage.FirstName != undefined) {
         document.getElementById("FirstName").value = sessionStorage.FirstName;
