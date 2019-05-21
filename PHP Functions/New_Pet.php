@@ -30,11 +30,11 @@ $Species = [
 if (!in_array($_POST['Species'], $Species)) {
 	die(json_encode(["isError" => true, "message" => "Invalid or unknown pet species"]));
 } else if (strlen($_POST['Breed']) == 0 || strlen($_POST['Breed']) > 255) {
-	die(json_encode(["isError" => true, "message" => "Pet Breed can't be empty"]));
+	die(json_encode(["isError" => true, "message" => "Pet Breed must be between 1 and 255 characters"]));
 } else if (strlen($_POST['PetName']) == 0 || strlen($_POST['PetName']) > 255) {
-	die(json_encode(["isError" => true, "message" => "Pet Name can't be empty"]));
+	die(json_encode(["isError" => true, "message" => "Pet Name must be between 1 and 255 characters"]));
 } else if (strlen($_POST['PetDescription']) == 0 || strlen($_POST['PetDescription']) > 255) {
-	die(json_encode(["isError" => true, "message" => "Pet Description can't be empty"]));
+	die(json_encode(["isError" => true, "message" => "Pet Description must be between 1 and 255 characters"]));
 } else if (!strtotime($_POST['DOB'])) {
 	die(json_encode(["isError" => true, "message" => "Invalid pet date of birth"]));
 } else if ($_POST['Gender'] != "male" || $_POST['Gender'] == "female") {
