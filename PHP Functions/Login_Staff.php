@@ -20,8 +20,6 @@ if (mysqli_num_rows($result) > 0) {
     $_SESSION['username'] = $_POST['username'];
     $_SESSION['isLoggedIn'] = true;
     echo json_encode(["isError" => false, "message" => "Login success"]);
-    sleep(4);
-    header('Location: http://ec2-13-239-38-4.ap-southeast-2.compute.amazonaws.com/Website/ViewContact.html');
 } else {
     echo json_encode(["isError" => true, "message" => "No result"]);
 }
