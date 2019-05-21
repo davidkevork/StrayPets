@@ -56,14 +56,47 @@ header h1{
 *{margin: 0;padding: 0}
 li{list-style: none;}
 
-ul li a{
+ 
+nav{
+	background-color:#FFFFF0;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 35px;
+}
+
+nav ul{
+	height: 2em;
+	margin: 0 auto;
+	text-align: center;
+}
+
+nav ul li{
+	list-style-type:none;
+    display:inline;
+	border:2px solid gray;
+	padding:0.2em 0.6em;
+	line-height: 1.5;
+}
+
+
+
+nav ul li a{
+	text-decoration:none;
+	font-size:1.2em;
+	color: rgb(152,142,135);
+	 font-size: 14px;
+}
+
+/*ul li a{
     font-size: 14px;
-   justify-content: center;
+   justify-content: left;
+   float: left
     color: rgb(152,142,135);
     display: flex;
 	background-color:#FFFFF0;
 
 }
+*/
 
 /*h1 for position page*/
 h1{
