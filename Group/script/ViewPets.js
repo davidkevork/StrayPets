@@ -25,11 +25,11 @@ window.onload = () => {
     } else {
       let table = "<table><tr>";
       table += "<td>ID</td><td>Species</td><td>Breed</td><td>DOB</td>";
-      table += "<td>Gender</td><td>PetName</td><td>PetDescription</td>";
+      table += "<td>Gender</td><td>PetName</td><td>PetDescription</td><td>Image</td>";
       (data.message).forEach(element => {
         table += "<tr>";
         Object.keys(element).forEach(elementKeys => {
-          table += `<td>${element[elementKeys]}</td>`;
+          table += elementKeys === 'PetImage' ? `<td><image width="45" height="45" src="${element[elementKeys]}"/></td>` : `<td>${element[elementKeys]}</td>`;
         });
         table += "</tr>";
       });
