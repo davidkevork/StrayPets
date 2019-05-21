@@ -1,10 +1,6 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['username']) || !isset($_SESSION['isLoggedIn']) || $_SESSION['isLoggedIn'] != true) {
-    die(json_encode(["isError" => true, "message" => "Please login before viewing contacts"]));
-}
-
 $servername = "rds-db-master.cz05xyronygj.ap-southeast-2.rds.amazonaws.com";
 $username = "username";
 $password = "password";
