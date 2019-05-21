@@ -37,7 +37,7 @@ if (!in_array($_POST['Species'], $Species)) {
 	die(json_encode(["isError" => true, "message" => "Pet Description must be between 1 and 255 characters"]));
 } else if (!strtotime($_POST['DOB'])) {
 	die(json_encode(["isError" => true, "message" => "Invalid pet date of birth"]));
-} else if ($_POST['Gender'] != "male" || $_POST['Gender'] == "female") {
+} else if ($_POST['Gender'] != "male" || $_POST['Gender'] != "female") {
 	die(json_encode(["isError" => true, "message" => "Invalid or unknown pet gender"]));
 } else if (!in_array(getimagesize($_FILES['PetImage'])[2], array(IMAGETYPE_GIF , IMAGETYPE_JPEG ,IMAGETYPE_PNG , IMAGETYPE_BMP))) {
 	die(json_encode(["isError" => true, "message" => "Invalid file type uploaded"]));
