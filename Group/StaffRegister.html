@@ -7,6 +7,8 @@
 		<meta name = "author" content="YICHEN GUAN"/>
 		<title>Resscusee Animals </title>
 		<link rel="stylesheet" href="styles/style1.css"/>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="./script/staff.js"></script>
 	</head>
 	<body>
 		<header>
@@ -39,28 +41,28 @@
 			<div class="header">Register to 
 				<span>PetHouse</span>
 			</div>
-			<form action="http://ec2-13-239-38-4.ap-southeast-2.compute.amazonaws.com/Website/Register_Staff.php" method="post">
+			<form action="#" id="registerForm">
 				<ul>
 					<li>
 						<div class="text">
 							<span class="user"></span>
-							<input type="text" placeholder="Please type username" name="username">
-							</div>
-						</li>
-						<li>
-							<div class="password">
-								<span class="PW"></span>
-								<input type="password" placeholder="Please type password" name="password">
-								</div>
-							</li>
-							<li>
-								<input type="submit" value="register">
-								</li>
-							</ul>
-						</form>
-						<div class="footer">
-							<p>Copyright &#169;PetHouse</p>
+							<input type="text" placeholder="Please type username" name="username" id="username">
 						</div>
-					</div>
-				</body>
-			</html>
+					</li>
+					<li>
+						<div class="password">
+							<span class="PW"></span>
+							<input type="password" placeholder="Please type password" name="password" id="password">
+						</div>
+					</li>
+					<li>
+						<input type="button" value="register" onclick="javascript:registerForm()">
+					</li>
+				</ul>
+			</form>
+			<div class="footer">
+				<p>Copyright &#169;PetHouse</p>
+			</div>
+		</div>
+	</body>
+</html>
