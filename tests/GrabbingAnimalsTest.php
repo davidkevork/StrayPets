@@ -4,7 +4,7 @@ use PHPUnit\Framework\TestCase;
 class GrabbingAnimalsTest extends TestCase
 {
   protected function setUp(): void
-	{
+  {
     $_POST = array();
     $_GET = array();
     $_FILES = array();
