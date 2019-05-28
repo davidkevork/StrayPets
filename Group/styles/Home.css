@@ -1,0 +1,53 @@
+/*
+#file name :Home.css
+#author: Tommy
+#created: 28/05/2019
+#Last modified: 28/05/2019
+#Description: Home Page
+*/
+
+h2 {
+	font-family: Arial;
+	font-size: 20px;
+	text-align: center;
+	float: both;
+	background-color: green;
+	border: 1px solid black;
+	color:white;
+}
+
+h3 {
+	margin-left: 2%;
+	width: 96%;
+	font-family: Arial;
+	font-size: 15px;
+	float:both;
+	text-align: center;
+	background-color: green;
+	color: white;
+}
+
+section {
+	margin-top: 20px;
+	display: inline-block;
+	width: 75%;
+	border: 1.5px solid gray;
+	float:both;
+	text-align: center;
+	margin-left: 12.5%;
+	background-color: #93DB70;
+}
+
+#firstsection img {
+	width: 50%;
+	height: 50%;
+}
+
+section p {
+	font-family: Arial;
+}
+
+#secondsection img {
+	width: 30%;
+	height: 30%;
+}

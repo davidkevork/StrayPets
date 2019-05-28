@@ -1,0 +1,39 @@
+/*
+#file name :BrowseAnimal.css
+#author: Tommy
+#created: 28/05/2019
+#Last modified: 28/05/2019
+#Description: Browse Animals Page
+*/
+
+aside {
+	display: block-inline;
+}
+
+table {
+	border: collapse;
+	text-align: center;
+	margin: 0 auto;
+	width: 90%;
+	background-color: #7CCD7C;
+	font-family: Arial;
+}
+
+table caption{
+	font-size:40px;
+	font-weight:900;
+	background-color:#CCFFCC;
+}
+
+table, th {
+	font-size: 12pt;
+}
+
+table, th, td {
+	border: 1px solid black;
+}
+
+table img {
+	height: 200px;
+	width: 200px;
+}
