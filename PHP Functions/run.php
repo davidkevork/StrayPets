@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 require "includeAll.php";
 
 if ($_GET['type'] == "GrabbingAnimals") {

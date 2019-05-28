@@ -1,5 +1,6 @@
 <?php
-require (__DIR__).'/../vendor/autoloader.php';
+error_reporting(0);
+require_once (__DIR__).'/../vendor/autoload.php';
 use Aws\S3\S3Client;
 use Aws\S3\MultipartUploader;
 use Aws\common\Exception\S3Exception;

@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 class Mysql
 {
 	private $hostname = "rds-db-master.cz05xyronygj.ap-southeast-2.rds.amazonaws.com";
