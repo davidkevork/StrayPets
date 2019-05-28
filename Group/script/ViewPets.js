@@ -18,7 +18,7 @@ $.makeTable = function (mydata) {
 window.onload = () => {
   $.ajax({
     dataType: "json",
-    url: 'http://ec2-13-239-38-4.ap-southeast-2.compute.amazonaws.com/Website/Grabbing_Animals.php',
+    url: 'http://ec2-13-239-38-4.ap-southeast-2.compute.amazonaws.com/Website/run.php?type=GrabbingAnimals',
   }).done(function(data) {
     if (data.isError === true) {
       document.getElementById('pets').innerHTML = "<p class='error'>"+data.message+"</p>";
