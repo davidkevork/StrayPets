@@ -39,7 +39,7 @@
 		</nav>
 		<article>
 			<h2>My Information</h2>
-			<form action="http://ec2-13-239-38-4.ap-southeast-2.compute.amazonaws.com/Website/Creating_Data.php" method="POST" id="regForm">
+			<form action="run.php" method="POST" id="regForm">
 				<fieldset>
 					<legend>Personal Details</legend>
 					<div>
@@ -126,6 +126,7 @@
 					<textarea rows="10" cols="50" name="Comment" id="Comment"></textarea>
 				</div>
 				<p id="error"></p>
+				<input type="hidden" name="type" value="CreatingData" id="type">
 				<input type="submit" value="Submit" />
 				<input type="reset" value="Reset" />
 			</form>

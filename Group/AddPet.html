@@ -38,7 +38,7 @@
 		</nav>
 		<article>
 			<h2>New Pet</h2>
-			<form enctype="multipart/form-data" action="New_Pet.php" method="POST" id="NewPetForm">
+			<form enctype="multipart/form-data" action="run.php" method="POST" id="NewPetForm">
 				<fieldset>
 					<legend>Pet Details</legend>
 					<div>
@@ -93,6 +93,7 @@
 					<br />
 				</fieldset>
 				<br />
+				<input type="hidden" name="type" value="NewPet" id="type">
 				<input type="submit" value="Submit" />
 				<input type="reset" value="Reset" />
 				<br />

@@ -1,6 +1,5 @@
 function login_register(username, password, type) {
-  let baseUrl = 'http://ec2-13-239-38-4.ap-southeast-2.compute.amazonaws.com/Website/';
-  baseUrl += type === 'login' ? 'Login_Staff.php' : 'Register_Staff.php';
+  let baseUrl = 'http://ec2-13-239-38-4.ap-southeast-2.compute.amazonaws.com/Website/run.php';
   $.ajax({
     method: "POST",
     dataType: "json",
@@ -8,6 +7,7 @@ function login_register(username, password, type) {
     data: {
       username,
       password,
+      type,
     },
   }).done(function(data) {
     if (data.isError === true) {
@@ -15,7 +15,7 @@ function login_register(username, password, type) {
       return data;
     } else {
       alert(`Success: ${data.message}`);
-      if (type === 'login') {
+      if (type === 'LoginStaff') {
         window.location.href = 'ViewContact.html';
       } else {
         window.location.href = 'StaffLogin.html';
@@ -24,16 +24,10 @@ function login_register(username, password, type) {
   });
 }
 
-function loginForm() {
+function submitForm() {
   const username = document.getElementById('username').value;
   const password = document.getElementById('password').value;
-  login_register(username, password, 'login');
-  return true;
-}
-
-function registerForm() {
-  const username = document.getElementById('username').value;
-  const password = document.getElementById('password').value;
-  login_register(username, password, 'register');
+  const type = document.getElementById('type').value;
+  login_register(username, password, type);
   return true;
 }
