@@ -4,10 +4,14 @@ session_start();
 
 class CreatingData extends Mysql
 {
-  public function __construct()
-	{   
-		parent::__construct();
-	}
+  private $test;
+  public function __construct($test = false)
+	{
+		$this->test = $test;
+		if ($this->test) {
+			parent::__construct();
+		}
+  }
 	public function array_in_array($needle, $haystack) {
 		$output = true;
 		foreach ($needle as $value) {
@@ -17,7 +21,7 @@ class CreatingData extends Mysql
 		}
 		return $output;
 	}
-  public function run() {
+	public function validate() {
 		$State = [
 			'VIC',
 			'NSW',
@@ -42,7 +46,7 @@ class CreatingData extends Mysql
 		];
 
 		if (!in_array($_POST['State'], $State)) {
-			return json_encode(["isError" => true, "message" => "Invalid or unknown pet species"]);
+			return json_encode(["isError" => true, "message" => "Invalid or unknown state"]);
 		} else if (strlen($_POST['FirstName']) == 0 || strlen($_POST['FirstName']) > 255) {
 			return json_encode(["isError" => true, "message" => "First Name must be between 1 and 255 characters"]);
 		} else if (strlen($_POST['LastName']) == 0 || strlen($_POST['LastName']) > 255) {
@@ -66,46 +70,55 @@ class CreatingData extends Mysql
 		} else if ($_POST['PetState']['others'] && strlen($_POST['Comment']) == 0) {
 			return json_encode(["isError" => true, "message" => "Comment can't be empty"]);
 		}
-
-		$sql = "INSERT INTO `contact` (
-			`FirstName`,
-			`LastName`,
-			`DOB`,
-			`Gender`,
-			`StreetAddress`,
-			`SuburbTown`,
-			`State`,
-			`PostCode`,
-			`EmailAddress`,
-			`PhoneNumber`,
-			`PetState`,
-			`Comment`,
-			`Date`
-		) VALUES (
-			'" . $_POST['FirstName'] . "',
-			'" . $_POST['LastName'] . "',
-			'" . $_POST['DOB'] . "',
-			'" . $_POST['Gender'] . "',
-			'" . $_POST['StreetAddress'] . "',
-			'" . $_POST['SuburbTown'] . "',
-			'" . $_POST['State'] . "',
-			'" . $_POST['PostCode'] . "',
-			'" . $_POST['EmailAddress'] . "',
-			'" . $_POST['PhoneNumber'] . "',
-			'" . serialize($_POST['PetState']) . "',
-			'" . ($_POST['Comment'] ?? "empty") . "',
-			NOW()
-		)";
-		
-		if (mysqli_query($this->mysqli, $sql)) {
-			return json_encode(["isError" => false, "message" => "New Record Created Successfully"]);
+		return ["isError" => false, "message" => "Validation success"];
+	}
+  public function run() {
+		$validate = $this->validate();
+		if ($validate["isError"] == false) {
+			$sql = "INSERT INTO `contact` (
+				`FirstName`,
+				`LastName`,
+				`DOB`,
+				`Gender`,
+				`StreetAddress`,
+				`SuburbTown`,
+				`State`,
+				`PostCode`,
+				`EmailAddress`,
+				`PhoneNumber`,
+				`PetState`,
+				`Comment`,
+				`Date`
+			) VALUES (
+				'" . $_POST['FirstName'] . "',
+				'" . $_POST['LastName'] . "',
+				'" . $_POST['DOB'] . "',
+				'" . $_POST['Gender'] . "',
+				'" . $_POST['StreetAddress'] . "',
+				'" . $_POST['SuburbTown'] . "',
+				'" . $_POST['State'] . "',
+				'" . $_POST['PostCode'] . "',
+				'" . $_POST['EmailAddress'] . "',
+				'" . $_POST['PhoneNumber'] . "',
+				'" . serialize($_POST['PetState']) . "',
+				'" . ($_POST['Comment'] ?? "empty") . "',
+				NOW()
+			)";
+			
+			if (mysqli_query($this->mysqli, $sql)) {
+				return json_encode(["isError" => false, "message" => "New Record Created Successfully"]);
+			} else {
+				return json_encode(["isError" => true, "message" => "Error: " . $sql . "<br>" . mysqli_error($this->mysqli)]);
+			}
 		} else {
-			return json_encode(["isError" => true, "message" => "Error: " . $sql . "<br>" . mysqli_error($this->mysqli)]);
+			return $validate;
 		}
   }
   public function __destruct()
 	{
-		parent::__destruct();
+		if ($this->test) {
+			parent::__destruct();
+		}
 	}
 }
 
