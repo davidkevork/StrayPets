@@ -1,0 +1,87 @@
+/*
+#file name :AllPages.css
+#author: Tommy
+#created: 28/05/2019
+#Last modified: 28/05/2019
+#Description: All Page styles
+*/
+
+header {
+	display: inline-block;
+	background-color: #228B22;
+	width: 99.7%;
+	height: 100px;
+	border: 3px solid black;
+	text-align: center;
+}
+
+header img{
+	width:75px;
+	height:75px;
+	float:left;
+	border: 1.5px solid black;
+	margin-top: 10px;
+	margin-left: 10px;
+}
+
+h1{
+	font-family: Arial;
+	font-weight: bold;
+	font-size: 40px;
+	color: white;
+	margin-right: 44px;
+}
+
+nav{
+	clear:both;
+	list-style: none;
+	margin-bottom: 10px;
+	height:46px;
+	background-color: #2E8B57;
+	text-align: center;
+	width: 100%;
+	font-size: 22px;
+	font-family: Arial;
+}
+
+nav ul{
+	list-style-type: none;
+	margin: 0px;
+	margin-left: 27.5%;
+	padding: 0;
+}
+
+nav ul li{
+    margin: 0px;
+	display: inline;
+}
+
+
+
+nav ul li a{
+	text-decoration:none;
+	padding: 10px;
+	color: white;
+	float:left;
+}
+
+nav ul li a:hover {
+	color: black;
+	background-color: #98FB98;
+}
+
+body {
+	background-image: url("images/backgroundgrass.jpg") ;
+	background-repeat: repeat;
+}
+
+footer {
+	clear: both;
+	width: 100%;
+	margin-top: 100px;
+	font-family: Arial;
+	color: white;
+	background-color: #228B22;
+	border: 3px solid black;
+	text-align: center;
+}

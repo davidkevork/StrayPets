@@ -1,0 +1,59 @@
+/*
+#file name : StaffRegister.css
+#author: Yichen
+#created: 28/05/2019
+#Last modified: 28/05/2019
+#Description: CSS for Staff Register Page
+*/
+
+.wrapper {
+	position: relative;
+	background-color: #548B54;
+	width: 30%;
+	margin-left: 35%;
+	text-align: center;
+	font-family: Arial;
+}
+
+.header {
+	background-color: #9BCD9B;
+	font-size: 20pt;
+}
+
+ul {
+	list-style: none;
+}
+
+input[type=text] {
+  padding: 0;
+  margin-right: 40px;
+  height: 40px;
+  position: relative;
+  left: 0;
+  outline: none;
+  border: 1px solid #cdcdcd;
+  border-color: rgba(0, 0, 0, .15);
+  background-color: white;
+  font-size: 20px;
+}
+
+input[type=password] {
+  padding: 0;
+  height: 40px;
+  margin-top: 10px;
+  margin-right: 40px;
+  position: relative;
+  left: 0;
+  outline: none;
+  border: 1px solid #cdcdcd;
+  border-color: rgba(0, 0, 0, .15);
+  background-color: white;
+  font-size: 20px;
+}
+
+input[type=button] {
+	font-size: 20px;
+	position: relative;
+	margin-top: 10px;
+	margin-right: 40px;
+}
