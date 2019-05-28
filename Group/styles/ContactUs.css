@@ -1,0 +1,33 @@
+/*
+#file name :ContactUs.css
+#author: Tommy
+#created: 28/05/2019
+#Last modified: 28/05/2019
+#Description: Contact Us Page
+*/
+
+article {
+	background-color: #71C671;
+	width: 25%;
+	margin-left: 37.5%;
+	font-family: Arial;
+	text-align: center;
+}
+
+h2 {
+	border: 1px solid black;
+	background-color: #E0EEE0;
+}
+
+fieldset {
+	background-color: #E0EEE0;
+}
+
+fieldset legend {
+	border: 0.5px solid black;
+	background-color: #E0EEE0;
+}
+
+div p {
+	font-weight: 900;
+}
