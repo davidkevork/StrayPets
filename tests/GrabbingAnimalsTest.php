@@ -13,13 +13,13 @@ class GrabbingAnimalsTest extends TestCase
   public function testNoData(): void
   {
     $output = $this->GrabbingAnimals->run();
-    $this->assertEquals(false, $output["isError"]);
+    $this->assertEquals(true, $output["isError"]);
     $this->assertEquals("There is no data within the mysql database", $output["message"]);
   }
   public function testData(): void
   {
     $output = $this->GrabbingAnimals->run();
-    $this->assertEquals(true, $output["isError"]);
+    $this->assertEquals(false, $output["isError"]);
     $this->assertEquals("Data is within the mysql database", $output["message"]);
   }
 }
