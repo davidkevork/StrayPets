@@ -7,6 +7,15 @@ class CreatingData extends Mysql
 	{   
 		parent::__construct();
 	}
+	public function array_in_array($needle, $haystack) {
+		$output = true;
+		foreach ($needle as $value) {
+			if (!in_array($value, $haystack)) {
+				$output = false;
+			}
+		}
+		return $output;
+	}
   public function run() {
 		$State = [
 			'VIC',
@@ -51,7 +60,7 @@ class CreatingData extends Mysql
 			return json_encode(["isError" => true, "message" => "Email Address must be between 1 and 255 characters"]);
 		} else if (strlen($_POST['PhoneNumber']) != 10 || filter_var(FILTER_SANITIZE_NUMBER_INT, $_POST['PhoneNumber'])) {
 			return json_encode(["isError" => true, "message" => "Phone Number must 10 digits"]);
-		} else if (!in_array($_POST['PetState'], $PetState)) {
+		} else if (!$this->array_in_array($_POST['PetState'], $PetState)) {
 			return json_encode(["isError" => true, "message" => "Invalid or unknown pet state"]);
 		} else if ($_POST['PetState']['others'] && strlen($_POST['Comment']) == 0) {
 			return json_encode(["isError" => true, "message" => "Comment can't be empty"]);

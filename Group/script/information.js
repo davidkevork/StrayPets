@@ -99,10 +99,10 @@ function storinformation() {
 
     sessionStorage.gender = document.getElementById("female").value;
 
-    sessionStorage.LPVC = document.getElementById("LP").checked;
+    sessionStorage.LP = document.getElementById("LP").checked;
     sessionStorage.Pick = document.getElementById("Pick").checked;
     sessionStorage.PCS = document.getElementById("PCS").checked;
-    sessionStorage.other = document.getElementById("others").checked;
+    sessionStorage.others = document.getElementById("others").checked;
 }
 
 // http://ec2-13-239-38-4.ap-southeast-2.compute.amazonaws.com/Website/Creating_Data.php
@@ -126,10 +126,10 @@ function prefillform() {
 					document.getElementById("male").checked = false;
 					document.getElementById("female").checked = true;
 				}
-        document.getElementById("LP").checked = sessionStorage.LPVC;
+        document.getElementById("LP").checked = sessionStorage.LP;
         document.getElementById("Pick").checked = sessionStorage.Pick;
         document.getElementById("PCS").checked = sessionStorage.PCS;
-        document.getElementById("others").checked = sessionStorage.other;
+        document.getElementById("others").checked = sessionStorage.others;
     }
 }
 
