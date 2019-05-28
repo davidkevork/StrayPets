@@ -21,7 +21,6 @@ class GrabbingAnimals extends Mysql
         } else {
             return json_encode(["isError" => true, "message" => "No result"]);
         }
-        mysqli_close($this->mysqli);
     }
     public function __destruct()
 	{

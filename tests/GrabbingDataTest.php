@@ -3,7 +3,7 @@ require_once (__DIR__).'/../PHP Functions/includeAll.php';
 
 use PHPUnit\Framework\TestCase;
 
-class GrabbingAnimalsTest extends TestCase
+class GrabbingDataTest extends TestCase
 {
   protected function setUp(): void
 	{
@@ -11,12 +11,12 @@ class GrabbingAnimalsTest extends TestCase
     $_GET = array();
     $_FILES = array();
 
-    $this->GrabbingAnimals = new GrabbingAnimals();
+    $this->GrabbingData = new GrabbingData();
   }
   
-  public function testGrabbingAnimals(): void
+  public function testGrabbingData(): void
   {
-    $output = json_decode($this->GrabbingAnimals->run());
+    $output = json_decode($this->GrabbingData->run());
     $this->assertEquals(false, $output["isError"]);
     $this->assertArrayHasKey("message", $output);
   }
