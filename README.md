@@ -1,4 +1,4 @@
-# steemphp
+# StrayPets
 
 
 [![Build Status](https://api.travis-ci.org/davidkevork/StrayPets.svg?branch=master)](https://travis-ci.org/davidkevork/StrayPets) [![Coverage Status](https://coveralls.io/repos/github/davidkevork/StrayPets/badge.svg?branch=master)](https://coveralls.io/github/davidkevork/StrayPets?branch=master)
