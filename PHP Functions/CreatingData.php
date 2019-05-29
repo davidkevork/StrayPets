@@ -67,7 +67,7 @@ class CreatingData extends Mysql
 			return ["isError" => true, "message" => "Phone Number must 10 digits"];
 		} else if (!$this->array_in_array($_POST['PetState'], $PetState)) {
 			return ["isError" => true, "message" => "Invalid or unknown pet state"];
-		} else if ($_POST['PetState']['others'] && strlen($_POST['Comment']) == 0) {
+		} else if (in_array('others', $_POST['PetState']) && strlen($_POST['Comment']) == 0) {
 			return ["isError" => true, "message" => "Comment can't be empty"];
 		}
 		return ["isError" => false, "message" => "Validation success"];
