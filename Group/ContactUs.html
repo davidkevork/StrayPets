@@ -6,8 +6,8 @@
 		<meta name ="keywords"  content="help,miss,find,pet" />
 		<meta name = "author" content="YICHEN GUAN"/>
 		<title>Resscusee Animals </title>
-		<link rel="stylesheet" href="styles/style1.css"/>
-		<link rel="stylesheet" href="styles/style.css"/>
+		<link rel="stylesheet" href="styles/AllPages.css"/>
+		<link rel="stylesheet" href="styles/ContactUs.css"/>
 		<script src="script/information.js"></script>
 	</head>
 	<body>
@@ -43,37 +43,37 @@
 				<fieldset>
 					<legend>Personal Details</legend>
 					<div>
-						<label for="FirstName">First Name</label >
+						<label for="FirstName">First Name:</label >
 						<input id="FirstName" type="text" name="FirstName" required="required" maxlength="20"/>
 					</div>
 					<div>
-						<label for="LastName">Last Name</label>
+						<label for="LastName">Last Name:</label>
 						<input id="LastName" type="text" name="LastName" required="required" maxlength="20"/>
 					</div>
 					<div>
-						<label for="DOB">Date of Birth</label>
+						<label for="DOB">Date of Birth:</label>
 						<input type="date" name="DOB" id="DOB" required="required"/>
 					</div>
 					<pdiv>
 						<span>Gender: </span>
-						<label for="male">Male</label>
+						<label for="male">Male:</label>
 						<input type="radio" id="male" name="Gender" value="male" required="required"/>
-						<label for="female">Female</label>
+						<label for="female">Female:</label>
 						<input type="radio" id="female" name="Gender" value="female" required="required"/>
 					</div>
 				</fieldset>
 				<fieldset>
 					<legend>Adress</legend>
 					<div>
-						<label for="StreetAddress">Street Address</label>
+						<label for="StreetAddress">Street Address:</label>
 						<input id="StreetAddress" type="text" name="StreetAddress" size="40" required="required"/>
 					</div>
 					<div>
-						<label for="SuburbTown">Suburb/town</label>
+						<label for="SuburbTown">Suburb/town:</label>
 						<input id="SuburbTown" type="text" name="SuburbTown" size="40" required="required"/>
 					</div>
 					<div>
-						<label for="State">State</label>
+						<label for="State">State:</label>
 						<select id="State" name="State">
 							<option value="">Please Select</option>
 							<option value="VIC">VIC </option>
@@ -87,25 +87,26 @@
 						</select>
 					</div>
 					<div>
-						<label for="PostCode">PostCode</label>
+						<label for="PostCode">PostCode:</label>
 						<input id="PostCode" type="text" name="PostCode" pattern="[0-9]{4}" required="required" />
 					</div>
 				</fieldset>
 				<fieldset>
 					<legend>Contact information</legend>
 					<div>
-						<label for="EmailAddress">Email Adress</label >
+						<label for="EmailAddress">Email Adress:</label >
 						<input id="EmailAddress" name="EmailAddress" type="email" required="required" />
 					</div>
 					<div>
-						<label for="PhoneNumber">Phone Number</label >
+						<label for="PhoneNumber">Phone Number:</label >
 						<input id="PhoneNumber" name="PhoneNumber" type="text" pattern="\d{3}[\ ]\d{3}[\ ]\d{4}" />
 					</div>
 				</fieldset>
-				<div>
+				<div id="inquiry">
+					<p>What is your inquiry?:</p>
 					<ul>
 						<li>
-							<label>Lose Pet</label>
+							<label>Lost Pet</label>
 							<input type="checkbox" name="PetState[]" value="LP" id="LP" />
 						</li>
 						<li>
@@ -113,11 +114,11 @@
 							<input type="checkbox" name="PetState[]" value="Pick" id="Pick"/>
 						</li>
 						<li>
-							<label>Provide cluess</label>
+							<label>Provide clues</label>
 							<input type="checkbox" name="PetState[]" value="PCS" id="PCS" />
 						</li>
 						<li>
-							<label>others</label>
+							<label>Other: (If so please fill out textbox below)</label>
 							<input type="checkbox" name="PetState[]" value="others" id="others"  />
 						</li>
 					</ul>

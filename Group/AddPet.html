@@ -6,13 +6,14 @@
 		<meta name ="keywords"  content="help,miss,find,pet" />
 		<meta name = "author" content="Lachlan becirovic"/>
 		<title>Enter animal </title>
-		<link rel="stylesheet" href="styles/style.css"/>
+		<link rel="stylesheet" href="styles/AllPages.css"/>
+		<link rel="stylesheet" href="styles/AddPet.css"/>
 		<script src="script/information.js"></script>
 	</head>
 	<body>
 		<header>
 			<img src="images/logo.jpg" alt="Logo"/>
-			<h1>Contact Us</h1>
+			<h1>Add Pet</h1>
 		</header>
 		<nav>
 			<ul>
@@ -32,17 +33,17 @@
 					<a href="StaffLogin.html">STAFF LOGIN</a>
 				</li>
 				<li>
-					<a href="StaffRegister.html">STAFF Register</a>
+					<a href="StaffRegister.html">STAFF REGISTER</a>
 				</li>
 			</ul>
 		</nav>
 		<article>
-			<h2>New Pet</h2>
+			<h2>Add a new pet to the database</h2>
 			<form enctype="multipart/form-data" action="run.php" method="POST" id="NewPetForm">
 				<fieldset>
 					<legend>Pet Details</legend>
 					<div>
-						<label for="Species">Species</label>
+						<label for="Species">Species: </label>
 						<select id="Species" name="Species">
 							<option value="Dog">Dog </option>
 							<option value="Cat">Cat</option>
@@ -56,12 +57,12 @@
 					</div>
 					<br />
 					<div>
-						<label for="Breed">Breed </label >
+						<label for="Breed">Breed: </label >
 						<input id="Breed" type="text" name="Breed" required="required" maxlength="20"/>
 					</div>
 					<br />
 					<div>
-						<label for="DOB">Date of Birth</label>
+						<label for="DOB">Date of Birth: </label>
 						<input type="date" name= "DOB" id="DOB" required="required"/>
 					</div>
 					<br />
@@ -77,17 +78,17 @@
 				<fieldset>
 					<legend>Pet Info</legend>
 					<div>
-						<label for="PetName">Pet Name </label>
+						<label for="PetName">Pet Name: </label>
 						<input id="PetName" type="text" name="PetName" size="20" required="required"/>
 					</div>
 					<br />
-					<div>
-						<label for="PetImage">Pet Image </label>
+					<div id="PetImage2">
+						<label for="PetImage">Pet Image: </label>
 						<input id="PetImage" type="file" name="PetImage" required="required" accept="image/*">
 					</div>
 					<br />
 					<div>
-						<label for="PetDescription">Pet description </label>
+						<label for="PetDescription">Pet description: </label>
 						<textarea id="PetDescription" name="PetDescription" placeholder="Write anything about the pet here." rows="4" cols="40"></textarea>
 					</div>
 					<br />
