@@ -8,7 +8,7 @@ class LoginStaff extends Mysql
     public function __construct($test = false)
 	{
         $this->test = $test;
-        if ($this->test) {
+        if (!$this->test) {
             parent::__construct();
         }
     }
@@ -39,7 +39,7 @@ class LoginStaff extends Mysql
     }
     public function __destruct()
 	{
-        if ($this->test) {
+        if (!$this->test) {
             parent::__destruct();
         }
 	}

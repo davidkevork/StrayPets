@@ -4,10 +4,14 @@ session_start();
 
 class GrabbingAnimals extends Mysql
 {
-    public function __construct()
-	{   
-		parent::__construct();
-	}
+    private $test;
+    public function __construct($test = false)
+	{
+        $this->test = $test;
+        if (!$this->test) {
+            parent::__construct();
+        }
+    }
     public function run() {
         $sql = "SELECT * FROM `Pets`";
         $result = mysqli_query($this->mysqli, $sql);
@@ -25,7 +29,9 @@ class GrabbingAnimals extends Mysql
     }
     public function __destruct()
 	{
-		parent::__destruct();
+        if (!$this->test) {
+            parent::__destruct();
+        }
 	}
 }
 
