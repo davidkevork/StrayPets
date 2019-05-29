@@ -8,9 +8,13 @@ session_start();
 
 class NewPet extends Mysql
 {
-  public function __construct()
-	{   
-		parent::__construct();
+  private $test;
+  public function __construct($test = false)
+	{
+		$this->test = $test;
+		if (!$this->test) {
+			parent::__construct();
+		}
 	}
   public function run() {
 		if (!isset($_SESSION['username']) || !isset($_SESSION['isLoggedIn']) || $_SESSION['isLoggedIn'] != true) {
@@ -95,7 +99,9 @@ class NewPet extends Mysql
   }
   public function __destruct()
 	{
-		parent::__destruct();
+		if (!$this->test) {
+			parent::__destruct();
+		}
 	}
 }
 

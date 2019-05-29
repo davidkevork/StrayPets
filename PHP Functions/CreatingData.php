@@ -8,10 +8,10 @@ class CreatingData extends Mysql
   public function __construct($test = false)
 	{
 		$this->test = $test;
-		if ($this->test) {
+		if (!$this->test) {
 			parent::__construct();
 		}
-  }
+	}
 	public function array_in_array($needle, $haystack) {
 		$output = true;
 		foreach ($needle as $value) {
@@ -116,7 +116,7 @@ class CreatingData extends Mysql
   }
   public function __destruct()
 	{
-		if ($this->test) {
+		if (!$this->test) {
 			parent::__destruct();
 		}
 	}
