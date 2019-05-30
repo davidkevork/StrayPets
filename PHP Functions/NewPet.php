@@ -49,7 +49,7 @@ class NewPet extends Mysql
 			return json_encode(["isError" => true, "message" => "Invalid pet date of birth"]);
 		} else if (!in_array($_POST['Gender'], $Gender)) {
 			return json_encode(["isError" => true, "message" => "Invalid or unknown pet gender"]);
-		} else if (!in_array(getimagesize($_FILES['PetImage'])[2], array(IMAGETYPE_GIF , IMAGETYPE_JPEG ,IMAGETYPE_PNG , IMAGETYPE_BMP))) {
+		} else if (!in_array(pathinfo($_FILES['PetImage']['name']), ['jpg','gif','png'])) {
 			return json_encode(["isError" => true, "message" => "Invalid file type uploaded"]);
 		}
 
