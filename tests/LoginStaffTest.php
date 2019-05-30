@@ -15,7 +15,7 @@ class LoginStaffTest extends TestCase
   }
   public function testLoginStaffWorking(): void
   {
-    $_POST['username'] = '';
+    $_POST['username'] = 'david';
     $_POST['password'] = 'password';
     $output = $this->LoginStaff->validate();
 
