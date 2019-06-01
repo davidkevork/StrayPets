@@ -38,17 +38,17 @@ class NewPet extends Mysql
 		];
 
 	  if (!in_array($_POST['Species'], $Species)) {
-			return json_encode(["isError" => true, "message" => "Invalid or unknown pet species"]);
+			return ["isError" => true, "message" => "Invalid or unknown pet species"];
 		} else if (strlen($_POST['Breed']) == 0 || strlen($_POST['Breed']) > 255) {
-			return json_encode(["isError" => true, "message" => "Pet Breed must be between 1 and 255 characters"]);
+			return ["isError" => true, "message" => "Pet Breed must be between 1 and 255 characters"];
 		} else if (strlen($_POST['PetName']) == 0 || strlen($_POST['PetName']) > 255) {
-			return json_encode(["isError" => true, "message" => "Pet Name must be between 1 and 255 characters"]);
+			return ["isError" => true, "message" => "Pet Name must be between 1 and 255 characters"];
 		} else if (strlen($_POST['PetDescription']) == 0 || strlen($_POST['PetDescription']) > 255) {
-			return json_encode(["isError" => true, "message" => "Pet Description must be between 1 and 255 characters"]);
+			return ["isError" => true, "message" => "Pet Description must be between 1 and 255 characters"];
 		} else if (!strtotime($_POST['DOB'])) {
-			return json_encode(["isError" => true, "message" => "Invalid pet date of birth"]);
+			return ["isError" => true, "message" => "Invalid pet date of birth"];
 		} else if (!in_array($_POST['Gender'], $Gender)) {
-			return json_encode(["isError" => true, "message" => "Invalid or unknown pet gender"]);
+			return ["isError" => true, "message" => "Invalid or unknown pet gender"];
 		} //else if (!in_array(pathinfo($_FILES['PetImage']['name']), ['jpg','gif','png'])) {
 			//return json_encode(["isError" => true, "message" => "Invalid file type uploaded"]);
 		//}
