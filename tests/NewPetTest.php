@@ -19,7 +19,8 @@ class NewPetTest extends TestCase
 	//		)
 	//);
 
-    //$this->NewPet = new NewPet(true, 'poodletest.jpg');
+    $this->NewPet = new NewPet(true//, 'poodletest.jpg'
+	);
     }
   
 public function testNewPetDataWorking() : void 
