@@ -1,7 +1,7 @@
 <?php
+//Testing
 error_reporting(0);
 session_start();
-
 class LoginStaff extends Mysql
 {
     private $test;
@@ -22,6 +22,12 @@ class LoginStaff extends Mysql
     }
     public function run() {
         $validate = $this->validate();
+        if ($validate["isError"] == false) {
+            $sql = "SELECT * FROM `staff` WHERE `username` = '" . $_POST['username'] . "' AND  `password` = '" . $_POST['password'] . "'";
+            $result = mysqli_query($this->mysqli, $sql);
+            
+            if (mysqli_num_rows($result) > 0) {
+                $_SESSION['username'] = $_POST['username'];
                 $_SESSION['isLoggedIn'] = true;
                 return json_encode(["isError" => false, "message" => "Login success"]);
             } else {
@@ -38,5 +44,4 @@ class LoginStaff extends Mysql
         }
 	}
 }
-
 ?>
