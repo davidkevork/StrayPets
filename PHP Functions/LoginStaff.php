@@ -2,6 +2,7 @@
 //Testing
 error_reporting(0);
 session_start();
+
 class LoginStaff extends Mysql
 {
     private $test;
@@ -44,4 +45,5 @@ class LoginStaff extends Mysql
         }
 	}
 }
+
 ?>
