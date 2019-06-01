@@ -45,4 +45,5 @@ class NewPetTest extends TestCase
 //		"
  // }
 //}
+}
 ?>
