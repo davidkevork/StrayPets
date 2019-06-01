@@ -58,7 +58,7 @@ class NewPet extends Mysql
 		//	return 
 		//}
 		
-		//return ["isError" => false, "message" => "Validation success"];
+		return ["isError" => false, "message" => "Validation success"];
   }
   public function run() {
 		if (!isset($_SESSION['username']) || !isset($_SESSION['isLoggedIn']) || $_SESSION['isLoggedIn'] != true) {
