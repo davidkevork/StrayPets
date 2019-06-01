@@ -9,29 +9,17 @@ class NewPetTest extends TestCase
 	{
     $_POST = array();
     $_GET = array();
-    $_FILES = array(
-			'test' => array(
-				'name' => 'poodletest.jpg',
-				'type' => 'image/jpg',
-				'size' => 4395,
-				'tmp_name' => 'poodletest.jpg',
-				'error' => 0
-			)
-	);
+    $_FILES = array();
+	//		'test' => array(
+	//			'name' => 'poodletest.jpg',
+	//			'type' => 'image/jpg',
+	//			'size' => 4395,
+	//			'tmp_name' => 'poodletest.jpg',
+	//			'error' => 0
+	//		)
+	//);
 
-    $this->NewPet = new NewPet(true, 'poodletest.jpg');
-  }
-  
-  protected function tearDown()
-  {
-	  unset($_FILES);
-	  unset(%this->NewPet);
-	  @unlink('poodletest.jpg');
-  }
-  
-  public function testReceive()
-  {
-	  $this->assertTrue($this->NewPet->receive('test'));
+    //$this->NewPet = new NewPet(true, 'poodletest.jpg');
   }
   
  // public function testCreatingDataNotWorking() : void 
