@@ -66,7 +66,7 @@ public function testNewPetInvalidBreed(): void
       $output = $this->NewPet->validate();
 	  
 	  $this->assertEquals(true, $output["isError"]);
-	  $this->assertEquals("Invalid or unknown pet species", $output["message"]);
+	  $this->assertEquals("Pet Breed must be between 1 and 255 characters", $output["message"]);
 	}
 public function testNewPetInvalidDateofBirth(): void
 	{
