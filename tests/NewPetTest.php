@@ -50,7 +50,7 @@ public function testNewPetInvalidSpecies(): void
 	  ];
       $output = $this->NewPet->validate();
 	  
-	  $this->assertEquals(false, $output["isError"]);
+	  $this->assertEquals(true, $output["isError"]);
 	  $this->assertEquals("Invalid or unknown pet species", $output["message"]);
 	}
 public function testNewPetInvalidBreed(): void
@@ -65,7 +65,7 @@ public function testNewPetInvalidBreed(): void
 	  ];
       $output = $this->NewPet->validate();
 	  
-	  $this->assertEquals(false, $output["isError"]);
+	  $this->assertEquals(true, $output["isError"]);
 	  $this->assertEquals("Invalid or unknown pet species", $output["message"]);
 	}
 public function testNewPetInvalidDateofBirth(): void
@@ -80,7 +80,7 @@ public function testNewPetInvalidDateofBirth(): void
 	  ];
       $output = $this->NewPet->validate();
 	  
-	  $this->assertEquals(false, $output["isError"]);
+	  $this->assertEquals(true, $output["isError"]);
 	  $this->assertEquals("Invalid pet date of birth", $output["message"]);
 	}
 public function testNewPetInvalidPetName(): void
@@ -95,7 +95,7 @@ public function testNewPetInvalidPetName(): void
 	  ];
       $output = $this->NewPet->validate();
 	  
-	  $this->assertEquals(false, $output["isError"]);
+	  $this->assertEquals(true, $output["isError"]);
 	  $this->assertEquals("Pet Name must be between 1 and 255 characters", $output["message"]);
 	}
 public function testNewPetInvalidPetDescription(): void
@@ -110,7 +110,7 @@ public function testNewPetInvalidPetDescription(): void
 	  ];
       $output = $this->NewPet->validate();
 	  
-	  $this->assertEquals(false, $output["isError"]);
+	  $this->assertEquals(true, $output["isError"]);
 	  $this->assertEquals("Pet Description must be between 1 and 255 characters", $output["message"]);
 	}
 }
